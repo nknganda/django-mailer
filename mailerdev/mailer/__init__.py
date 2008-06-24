@@ -1,3 +1,5 @@
+import mailer.admin
+
 from django.utils.encoding import force_unicode
 
 from mailer.models import Message

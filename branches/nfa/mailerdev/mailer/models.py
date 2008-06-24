@@ -81,9 +81,6 @@ class Message(models.Model):
             return True
         else:
             return False
-    
-    class Admin:
-        list_display = ('id', 'to_address', 'subject', 'when_added', 'priority')
 
 
 class DontSendEntryManager(models.Manager):
@@ -111,10 +108,6 @@ class DontSendEntry(models.Model):
     class Meta:
         verbose_name = 'don\'t send entry'
         verbose_name_plural = 'don\'t send entries'
-    
-    class Admin:
-        list_display = ('to_address', 'when_added')
-
 
 
 RESULT_CODES = (
@@ -165,6 +158,3 @@ class MessageLog(models.Model):
     when_attempted = models.DateTimeField(default=datetime.now)
     result = models.CharField(max_length=1, choices=RESULT_CODES)
     log_message = models.TextField()
-    
-    class Admin:
-        list_display = ('id', 'to_address', 'subject', 'when_attempted', 'result')

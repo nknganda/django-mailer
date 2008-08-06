@@ -25,6 +25,14 @@ and then just call `send_mail` like you normally would in django:
 send_mail(subject, message_body, settings.DEFAULT_FROM_EMAIL, recipients)
 }}}
 
+*NEW In r32*
+
+You can have Django use the mailer for crash e-mails if you add the following to your settings.py file:
+{{{
+MAILER_FOR_CHASH_EMAILS = True
+}}}
+
+This can help when you have a large number of crashes occurring, as the default mail_admins will bring the site to a crawl posting the mail messages to the smpt server. It will also give you a chance to purge excessive crash e-mails before they are sent.
 
 ==Clear Queue With Command Extensions==
 

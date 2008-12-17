@@ -13,9 +13,12 @@ Because django-mailer currently uses the same function signature as django's cor
 
 {{{
 # favour django-mailer but fall back to django.core.mail
+from django.db import models
+from django.core.exceptions import ImproperlyConfigured
 try:
+    mailer = models.get_app("mailer")
     from mailer import send_mail
-except ImportError:
+except ImproperlyConfigured:
     from django.core.mail import send_mail
 }}}
 

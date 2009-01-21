@@ -12,14 +12,12 @@ The latter is done via a command extension.
 Because django-mailer currently uses the same function signature as django's core mail support you can do the following in your code
 
 {{{
-from django.db import models
-from django.core.exceptions import ImproperlyConfigured
+from django.conf import settings
 
 # favour django-mailer but fall back to django.core.mail
-try:
-    mailer = models.get_app("mailer")
+if "mailer" in settings.INSTALLED_APPS:
     from mailer import send_mail
-except ImproperlyConfigured:
+else:
     from django.core.mail import send_mail
 }}}
 

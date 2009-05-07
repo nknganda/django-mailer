@@ -1,5 +1,4 @@
 #summary thinking aloud posted to django-users
-#labels Featured
 
 I'm a big believer in a step-by-step approach so I was going to  
 postpone support for deferred sending (e.g. send this email out at  

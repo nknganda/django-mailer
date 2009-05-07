@@ -1,5 +1,4 @@
 #summary quick guide to how to start using django-mailer
-#labels Featured
 
 =Quick Start Guide=
 
